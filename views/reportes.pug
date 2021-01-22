@@ -1,0 +1,87 @@
+extends layout
+
+block content
+
+    .body
+        .container
+            nav.navbar                 
+                a.link(href='/')
+                    button.button1 Home
+
+            hr
+            table.table.bg-white
+                thead
+                    h1 Reportes
+                    tr 
+                        th(scope='col') Cantidad de Pasajes Vendidos
+                        
+                tbody
+                    tr
+                        td #{reservas[0].Numero}
+                    tr 
+                        th(scope='col') Cantidad de Aviones Disponibles
+                        
+                tbody
+                    tr
+                        td #{disponibles[0].Numero}
+                    tr 
+                        th(scope='col') Cantidad de Aviones en Mantenimiento
+                        
+                tbody
+                    tr
+                        td #{mant[0].Numero}
+                    tr 
+                        th(scope='col') Ganancias de Acuerdo a los Vuelos Actuales
+                        
+                tbody
+                    tr
+                        td #{ganancias[0].Ganancias} $
+                    tr 
+                        th(scope='col') Cantidad de Usos por Cada Avión
+                        
+                tbody
+                    - for(var i=0; i < avionesUsos.length; i++)                    
+                        tr
+                            td Modelo: #{avionesUsos[i].Avion}  /  Usos: #{avionesUsos[i].Usos}
+                    tr 
+                        th(scope='col') Cantidad Programada para un Vuelo VS Cantidad que Abordaron
+                        
+                tbody
+                    tr 
+                        td Workbench 
+
+                    tr 
+                        th(scope='col') Destinos más Visitados
+                tbody
+                    tr 
+                        td Workbench
+
+                    tr 
+                        th(scope='col') Peso Promedio de los Vuelos
+                tbody    
+                    tr 
+                        td #{prompeso[0].Numero} Kg
+
+                    tr 
+                        th(scope='col') Aeropuertos más Visitados 
+                tbody
+                    tr 
+                        td Workbench
+
+                    tr 
+                        th(scope='col') Demograficas 
+                tbody
+                    tr 
+                        td Workbench
+                    tr 
+                        th(scope='col') Sobreventa 
+                tbody
+                    tr 
+                        td #{sobreventa[0].Numero}
+                    tr 
+                        th(scope='col') Sobreventa Porcentaje 
+                tbody
+                    tr 
+                        td #{sobreventaPorcentual[0].Score}
+
+
